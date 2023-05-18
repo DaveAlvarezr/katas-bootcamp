@@ -102,36 +102,42 @@ function abbreviateWords(word1, word2) {
   return `${word1[0]}.${word2[0]}`
 } 
 
-function abbreviateWords(word1, word2) {
-
-  if (
-
-    word1 === "" ||
-
-    typeof word1 !== "string" ||
-
-    word2 === "" ||
-
-    typeof word2 !== "string"
-
-  ) {
-
+function filterByWord(phrase, word) {
+  if (typeof phrase !== "string" || typeof word !== "string") {
     return null;
-
   }
 
-  return `${word1[0]}.${word2[0]}`;
-
+  return phrase.split(word).join("");
 }
 
-// function filterByWord(phrase, word) {
-//   if (typeof phrase !== "string" || typeof word !== "string") {
-//     return null;
-//   }
+function reverse(word) {
+  if (typeof word !== "string") {
+    return null;
+  }
 
-//   return phrase.split(word).join("");
-// }
+  // Versión corta
 
+  return word.split("").reverse().join("");
+}
+
+function isAllUpperCase(word) {
+  if (typeof word !== "string") {
+    return false;
+  }
+  
+  return word === word.toUpperCase();
+}
+
+function isPalindrome(word) {
+  if (typeof word !== 'string') {
+    return false;
+  }
+  const wordReverse = reverse(word);
+  if (word.toLowerCase() === wordReverse.toLowerCase()) {
+    return true;
+  }
+  return false;
+}
 
 module.exports = {
   getHelloWorld,
@@ -144,4 +150,9 @@ module.exports = {
   countNegativeNumbersInArray,
   converToEuro,
   abbreviateWords,
-}
+  filterByWord,
+  reverse,
+  isAllUpperCase,
+  isPalindrome,
+  filterAndReverse,
+};
