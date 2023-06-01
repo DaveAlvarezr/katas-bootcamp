@@ -139,6 +139,75 @@ function isPalindrome(word) {
   return false;
 }
 
+function filterAndReverse(phrase, filter, bool) {
+  if (typeof phrase !== 'string') {
+    return null;
+  }
+  if (typeof filter !== 'string') {
+    return null;
+  } 
+    if (typeof bool !== 'boolean') {
+      return null;
+    }
+  const phraseFilter = filterByWord(phrase, filter);
+  if (bool === true) {
+    return reverse(phraseFilter);
+  }
+  return phraseFilter;
+}
+
+function repeatWord(word, number) {
+if (typeof word !== 'string' 
+|| typeof number !== 'number') {
+  return null;
+}
+  let repeatWord = '';
+  for (let i = 0; i < number; i++) {
+    repeatWord += word;
+  }
+  return repeatWord;
+}
+
+function replaceWordInSentence(phrase, patron, word) {
+  if (typeof word !== 'string'
+  || typeof patron !== 'string'
+  || typeof phrase !== 'string') {
+    return null;
+  }
+  if (patron === '') {
+    return phrase;
+  }
+  let replacePhrase = phrase.replace(patron, word);
+  return replacePhrase
+}
+
+function sumNumbersToFinalNumber(number){
+  let numberPlus = 0;
+  for (let i = 1; i <= number; i++) {
+    numberPlus += i;
+  }
+  return numberPlus; 
+}
+
+function largestExpression(a, b, c){
+if (typeof a !== 'number' 
+|| typeof b !== 'number'
+|| typeof c !== 'number') {
+  return null;
+}
+  let max = -Infinity;
+
+  const operations = [
+  a * (b + c),
+  a * b * c,
+  a + b * c,
+  (a + b) * c,
+  a * b + c,
+  a + b + c,
+  ];
+  return Math.max(...operations);
+}
+
 module.exports = {
   getHelloWorld,
   getStringByCondition,
@@ -155,4 +224,8 @@ module.exports = {
   isAllUpperCase,
   isPalindrome,
   filterAndReverse,
+  repeatWord,
+  replaceWordInSentence,
+  sumNumbersToFinalNumber,
+  largestExpression,
 };
