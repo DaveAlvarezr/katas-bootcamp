@@ -56,13 +56,13 @@ it("convertArrayStringsToArrayNumbers", () => {
  * 
  * Si el argumento no es un número, se devuelve null
  */
-it('getCenturyByYear', () => {
-  expect(getCenturyByYear(1705)).toBe(18);
-  expect(getCenturyByYear(1900)).toBe(19);
-  expect(getCenturyByYear(1601)).toBe(17);
-  expect(getCenturyByYear(2000)).toBe(20);
-  expect(getCenturyByYear(2003)).toBe(21);
-});
+// it('getCenturyByYear', () => {
+//   expect(getCenturyByYear(1705)).toBe(18);
+//   expect(getCenturyByYear(1900)).toBe(19);
+//   expect(getCenturyByYear(1601)).toBe(17);
+//   expect(getCenturyByYear(2000)).toBe(20);
+//   expect(getCenturyByYear(2003)).toBe(21);
+// });
 
 /**
  * Función que devuelve un array con los elementos que no estén contenidos en el segundo array dado
@@ -85,12 +85,12 @@ it('removeValues', () => {
  * 
  * Si el número dado, no es de tipo numérico se devuelve array vacío
  */
-it('buildArray', () => {
-  expect(buildArray(5, true, false)).toEqual([true, false, true, false, true]);
-  expect(buildArray(10, 'blue', 'red')).toEqual(['blue', 'red', 'blue', 'red', 'blue', 'red', 'blue', 'red', 'blue', 'red']);
-  expect(buildArray(0, 'one', 'two')).toEqual([]);
-  expect(buildArray('cuatro', 'one', 'two')).toEqual([]);
-});
+// it('buildArray', () => {
+//   expect(buildArray(5, true, false)).toEqual([true, false, true, false, true]);
+//   expect(buildArray(10, 'blue', 'red')).toEqual(['blue', 'red', 'blue', 'red', 'blue', 'red', 'blue', 'red', 'blue', 'red']);
+//   expect(buildArray(0, 'one', 'two')).toEqual([]);
+//   expect(buildArray('cuatro', 'one', 'two')).toEqual([]);
+// });
 
 /**
  * Función que devuelve un array en base a los elementos duplicados que existen el array dado

@@ -74,8 +74,53 @@ function removeValues(array1, array2) {
   return array;
 }
 
-function buildArray(){
-  
+
+function findDuplicates(array) {
+  if (!Array.isArray(array)) {
+    let emptyArray = [];
+    return emptyArray;
+  }
+  const uniqueItems = [];
+  const duplicatedItems = [];
+  array.forEach((element) => {
+    if (!uniqueItems.includes(element)) {
+      uniqueItems.push(element);
+    } else if (!duplicatedItems.includes(element)) {
+      duplicatedItems.push(element);
+    }
+  });
+  return duplicatedItems;
+}
+
+function convertNumberToStringWords(number) {
+  if (typeof number !== "number") {
+    return "";
+  }
+  const numbersInString = [
+    "zero",
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine",
+  ];
+  const prefixNeg = "neg";
+  let numberToString = "";
+  if (number < 0) {
+    numberToString += `${prefixNeg}.`;
+    number = Math.abs(number);
+  }
+  const digits = String(number).split("");
+  const digitsToString = [];
+  for (const digit of digits) {
+    digitsToString.push(numbersInString[digit]);
+  }
+  numberToString += digitsToString.join(".");
+  return numberToString;
 }
 
 module.exports = {
@@ -84,4 +129,6 @@ module.exports = {
   convertArrayStringsToArrayNumbers,
   removeValues,
   buildArray,
+  findDuplicates,
+  convertNumberToStringWords,
 };
